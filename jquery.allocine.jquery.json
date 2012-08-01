@@ -1,0 +1,32 @@
+{
+  "name": "jquery.allocine",
+  "title": "jQuery Allocine API library",
+  "description": "Provide tools to fetch informations from allocine database",
+  "version": "0.1.0",
+  "homepage": "https://github.com/tlechauve/AllocineJS",
+  "author": {
+    "name": "Thomas Lechauve",
+    "email": "thomas.lechauve@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tlechauve/AllocineJS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tlechauve/AllocineJS/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/tlechauve/AllocineJS/blob/master/LICENSE-MIT"
+    },
+    {
+      "type": "GPL",
+      "url": "https://github.com/tlechauve/AllocineJS/blob/master/LICENSE-GPL"
+    }
+  ],
+  "dependencies": {
+    "jquery": ">= 1.6"
+  },
+  "keywords": []
+}
