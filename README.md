@@ -1,0 +1,4 @@
+AllocineJS
+==========
+
+Allocine API library
