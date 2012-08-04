@@ -2,56 +2,36 @@
 /*global start:false, stop:false ok:false, equal:false, notEqual:false, deepEqual:false*/
 /*global notDeepEqual:false, strictEqual:false, notStrictEqual:false, raises:false*/
 (function($) {
+    module('jQuery#allocine', function () {
+        $.ajaxSetup({ timeout: 4000 });
+    });
 
-  /*
-    ======== A Handy Little QUnit Reference ========
-    http://docs.jquery.com/QUnit
+    test('searchMovie', 3, function() {
+        var movie = 'Batman',
+            response;
+        stop();
+        $(document).allocine('searchMovie', movie, {
+            complete: function (jqxhr) {
+                start();
+                equal(jqxhr.status, 200, "should receive a 200 response");
+                response = JSON.parse(jqxhr.responseText);
+                equal(response.feed.count, 5, "should receive 5 movies");
+                ok(response.feed.totalResults >= 28, "currently there is 28 movies for Batman request");
+            }
+        });
+    });
 
-    Test methods:
-      expect(numAssertions)
-      stop(increment)
-      start(decrement)
-    Test assertions:
-      ok(value, [message])
-      equal(actual, expected, [message])
-      notEqual(actual, expected, [message])
-      deepEqual(actual, expected, [message])
-      notDeepEqual(actual, expected, [message])
-      strictEqual(actual, expected, [message])
-      notStrictEqual(actual, expected, [message])
-      raises(block, [expected], [message])
-  */
-
-  module('jQuery#awesome', {
-    setup: function() {
-      this.elems = $('#qunit-fixture').children();
-    }
-  });
-
-  test('is chainable', 1, function() {
-    // Not a bad test to run on collection methods.
-    strictEqual(this.elems.awesome(), this.elems, 'should be chaninable');
-  });
-
-  test('is awesome', 1, function() {
-    strictEqual(this.elems.awesome().text(), 'awesomeawesomeawesome', 'should be thoroughly awesome');
-  });
-
-  module('jQuery.awesome');
-
-  test('is awesome', 1, function() {
-    strictEqual($.awesome(), 'awesome', 'should be thoroughly awesome');
-  });
-
-  module(':awesome selector', {
-    setup: function() {
-      this.elems = $('#qunit-fixture').children();
-    }
-  });
-
-  test('is awesome', 1, function() {
-    // Use deepEqual & .get() when comparing jQuery objects.
-    deepEqual(this.elems.filter(':awesome').get(), this.elems.last().get(), 'knows awesome when it sees it');
-  });
-
+    test('getMovie', 2, function () {
+        var idmovie = '132874', // Batman Dark knight rises
+            response;
+        stop();
+        $(document).allocine('getMovie', idmovie, {
+            complete: function (jqxhr) {
+                start();
+                equal(jqxhr.status, 200, "should receive a 200 response");
+                response = JSON.parse(jqxhr.responseText);
+                equal(response.movie.originalTitle, 'The Dark Knight Rises', "should fetch The dark knight rises");
+            }
+        });
+    });
 }(jQuery));
