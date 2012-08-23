@@ -1,4 +1,4 @@
-(function (window, $) {
+(function ($) {
     'use strict';
     var partner = 'YW5kcm9pZC12M3M',
         build_url = function (url, params) {
@@ -44,4 +44,4 @@
         }
         return r;
     };
-}(window, jQuery));
+}(jQuery));
