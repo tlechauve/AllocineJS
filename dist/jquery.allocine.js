@@ -1,8 +1,8 @@
-/*! jQuery Allocine API library - v0.0.1 - 2012-08-04
+/*! jQuery Allocine API library - v0.1.0 - 2012-08-23
 * https://github.com/tlechauve/AllocineJS
 * Copyright (c) 2012 Thomas Lechauve; Licensed MIT, GPL */
 
-(function (window, $) {
+(function ($) {
     'use strict';
     var partner = 'YW5kcm9pZC12M3M',
         build_url = function (url, params) {
@@ -48,4 +48,4 @@
         }
         return r;
     };
-}(window, jQuery));
+}(jQuery));
