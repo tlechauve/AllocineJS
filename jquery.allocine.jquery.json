@@ -1,8 +1,8 @@
 {
   "name": "jquery.allocine",
   "title": "jQuery Allocine API library",
-  "description": "Provide tools to fetch informations from allocine database",
-  "version": "0.0.1",
+  "description": "Provide tools to fetch information from allocine database",
+  "version": "0.1.0",
   "homepage": "https://github.com/tlechauve/AllocineJS",
   "author": {
     "name": "Thomas Lechauve",
