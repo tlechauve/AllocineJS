@@ -1,6 +1,6 @@
 (function ($) {
     'use strict';
-    var partner = 'YW5kcm9pZC12M3M',
+    var partner = 'QUNXZWItQWxsb0Npbuk',
         build_url = function (url, params) {
             return url + '?' + $.param(params);
         },
